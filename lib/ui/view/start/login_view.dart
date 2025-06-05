@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../widget/logo_widget.dart';
-import 'button_widget.dart';
+import '../../button_widget.dart';
 import 'load_view.dart';
 
 class Login extends StatefulWidget {
@@ -45,8 +45,8 @@ class LoginState extends State<Login> {
         builder: (BuildContext context) {
           return Container(
             child: AlertDialog(
-              title: Column(children: [Text('알림')]),
               content: Column(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [Text('현재 사용할 수 없는 기능입니다.')],
@@ -64,7 +64,6 @@ class LoginState extends State<Login> {
         },
       );
     }
-
     return Material(
       child: FullSizedBox(
         child: ColoredBox(
@@ -81,7 +80,6 @@ class LoginState extends State<Login> {
                   '로그인 정보를 입력하세요.',
                   style: TextStyle(fontSize: 20, color: MyApp.white),
                 ),
-
                 Form(
                   key: _formKey,
                   child: Column(
@@ -105,10 +103,10 @@ class LoginState extends State<Login> {
                           decoration: InputDecoration(
                             labelText: 'Username',
                             prefixIcon: SvgPicture.asset(
-                              'assets/icons/person_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg',
+                              'assets/icons/person.svg',
                               color: MyApp.fontGrey,
-                              width: 40,
-                              height: 40,
+                              width: 30,
+                              height: 30,
                             ),
                             filled: true,
                             fillColor: MyApp.white,
@@ -135,10 +133,10 @@ class LoginState extends State<Login> {
                           decoration: InputDecoration(
                             labelText: 'password',
                             prefixIcon: SvgPicture.asset(
-                              'assets/icons/lock_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg',
+                              'assets/icons/lock.svg',
                               color: MyApp.fontGrey,
-                              width: 40,
-                              height: 40,
+                              width: 30,
+                              height: 30,
                             ),
                             filled: true,
                             fillColor: MyApp.white,
@@ -148,7 +146,6 @@ class LoginState extends State<Login> {
                     ],
                   ),
                 ),
-
                 SizedBox(
                   width: 400,
                   child: Row(
@@ -175,12 +172,6 @@ class LoginState extends State<Login> {
                   color: MyApp.point,
                   child: TextButton(
                     onPressed: submit,
-                    /*onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Load()),
-                      );
-                    },*/
                     child: Text(
                       'Sign In',
                       style: TextStyle(color: MyApp.white),

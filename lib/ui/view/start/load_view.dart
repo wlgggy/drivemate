@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:drivemate/main.dart';
-import 'package:drivemate/ui/view/start/button_widget.dart';
+import 'package:drivemate/ui/button_widget.dart';
+import 'package:drivemate/ui/view/home/home_view.dart';
+import 'package:drivemate/ui/view/tab_view.dart';
 import 'package:drivemate/ui/widget/logo_widget.dart';
 import 'package:drivemate/ui/widget/sized_widget.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +32,7 @@ class LoadState extends State<Load> {
         _formKey.currentState!.save();
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Load()),
+          MaterialPageRoute(builder: (context) => LayoutView()),
         );
       }
     }
@@ -48,10 +50,11 @@ class LoadState extends State<Load> {
             child: AlertDialog(
               title: Column(children: [Text('알림')]),
               content: Column(
+                mainAxisSize:MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     child: Row(
                       children: [
                         if (selectedImage != null)
@@ -175,7 +178,7 @@ class LoadState extends State<Load> {
                                             onPressed:
                                                 Navigator.of(context).pop,
                                             child: SvgPicture.asset(
-                                              'assets/icons/cancel_24dp_5F6368_FILL0_wght300_GRAD200_opsz24.svg',
+                                              'assets/icons/cancel.svg',
                                               width: 40,
                                               height: 40,
                                             ),
@@ -204,7 +207,7 @@ class LoadState extends State<Load> {
                                               decoration: InputDecoration(
                                                 labelText: 'Username',
                                                 prefixIcon: SvgPicture.asset(
-                                                  'assets/icons/directions_car_24dp_5F6368_FILL0_wght300_GRAD200_opsz24.svg',
+                                                  'assets/icons/person.svg',
                                                   color: MyApp.fontGrey,
                                                   width: 40,
                                                   height: 40,
@@ -232,7 +235,7 @@ class LoadState extends State<Load> {
                                               decoration: InputDecoration(
                                                 labelText: 'password',
                                                 prefixIcon: SvgPicture.asset(
-                                                  'assets/icons/pin_24dp_5F6368_FILL0_wght300_GRAD200_opsz24.svg',
+                                                  'assets/icons/lock.svg',
                                                   color: MyApp.fontGrey,
                                                   width: 40,
                                                   height: 40,
@@ -247,25 +250,6 @@ class LoadState extends State<Load> {
                                             height: 200,
                                             child: ElevatedButton(
                                               onPressed: () => PopUp(),
-                                              /*style: ButtonStyle(
-                                          backgroundColor: WidgetStateProperty.all(Colors.white),
-                                          foregroundBuilder: (context, states, child) {
-                                            if (selectedImage != null) {
-                                              return Image(image: selectedImage);
-                                            }
-
-                                            return Center(
-                                                child: Icon(
-                                                  Icons.image,
-                                                  size: 90,
-                                                  color: Colors.black
-                                                )
-                                            );
-                                          },
-                                          shape: WidgetStateProperty.all(
-                                              RoundedRectangleBorder(side: BorderSide.none)
-                                          )
-                                        ),*/
                                               child:
                                                   (selectedImage != null)
                                                       ? Image.file(
@@ -274,26 +258,13 @@ class LoadState extends State<Load> {
                                                         ),
                                                         fit: BoxFit.cover,
                                                       )
-                                                      : const Icon(
-                                                        Icons.image,
-                                                        size: 50,
-                                                        color: Colors.white,
+                                                      : SvgPicture.asset(
+                                                        'assets/icons/image.svg',
+                                                        color: MyApp.fontGrey,
+                                                        width: 50,
+                                                        height: 50,
                                                       ),
                                             ),
-
-                                            // MaterialButton(
-                                            //   onPressed: () => PopUp(),
-                                            //   child: Container(
-                                            //     width: 400,
-                                            //     height: 200,
-                                            //     decoration: BoxDecoration(
-                                            //         color: MyApp.white,
-                                            //         image: DecorationImage(
-                                            //           image: userImage ?? AssetImage('assets/icons/image_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg')
-                                            //         )
-                                            //     )
-                                            //   ),
-                                            // ),
                                           ),
                                           Column(
                                             children: [
@@ -306,19 +277,9 @@ class LoadState extends State<Load> {
                                           Padding(
                                             padding: EdgeInsets.only(top: 10),
                                           ),
-                                          Container(
-                                            height: 50,
-                                            width: 400,
-                                            color: MyApp.point,
-                                            child: TextButton(
-                                              onPressed: submit,
-                                              child: Text(
-                                                '차량 등록 후 이용하기',
-                                                style: TextStyle(
-                                                  color: MyApp.white,
-                                                ),
-                                              ),
-                                            ),
+                                          ButtonWidget(
+                                            text: '차량 등록 후 이용 하기',
+                                            link: submit,
                                           ),
                                         ],
                                       ),
@@ -330,10 +291,7 @@ class LoadState extends State<Load> {
                           },
                         );
                       },
-                      child: Text(
-                        '차량 등록 후 이용하기',
-                        style: TextStyle(color: MyApp.white),
-                      ),
+                      child: RedButtonWidget(text: '차량 등록 후 이용하기'),
                     ),
                   ),
                 ],
