@@ -13,7 +13,7 @@ class LogoWidget extends StatelessWidget {
       spacing: 10,
       children: [
         SvgPicture.asset(
-          'assets/icons/hub_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg',
+          'assets/icons/logo.svg',
           color: MyApp.logo,
           width: 40,
           height: 40,
