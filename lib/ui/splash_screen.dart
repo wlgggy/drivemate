@@ -28,7 +28,6 @@ class SplashScreenState extends State<SplashScreen> {
           color: Colors.black,
           child: Center(
             child: AnimatedOpacity(
-              /*Navigator.push(context, MaterialPageRoute(builder: (context)=>const Load()));*/
               onEnd: () {
                 Navigator.push(
                   context,
@@ -42,7 +41,7 @@ class SplashScreenState extends State<SplashScreen> {
                 spacing: 20,
                 children: [
                   SvgPicture.asset(
-                    'assets/icons/hub_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg',
+                    'assets/icons/logo.svg',
                     color: MyApp.logo,
                     width: 100,
                     height: 100,
