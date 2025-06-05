@@ -89,16 +89,50 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
   assets:
-    - assets/icons/hub_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg
-    - assets/icons/cancel_24dp_5F6368_FILL0_wght300_GRAD200_opsz24.svg
-    - assets/icons/lock_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg
-    - assets/icons/person_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg
-    - assets/icons/directions_car_24dp_5F6368_FILL0_wght300_GRAD200_opsz24.svg
-    - assets/icons/pin_24dp_5F6368_FILL0_wght300_GRAD200_opsz24.svg
-    - assets/icons/image_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg
+    - assets/icons/bonnet.svg
+    - assets/icons/cancel.svg
+    - assets/icons/car_door.svg
+    - assets/icons/car_front.svg
+    - assets/icons/childseat.svg
+    - assets/icons/divide.svg
+    - assets/icons/door.svg
+    - assets/icons/fan.svg
+    - assets/icons/front_car.svg
+    - assets/icons/gas_station.svg
+    - assets/icons/handle.svg
+    - assets/icons/heat.svg
+    - assets/icons/image.svg
+    - assets/icons/key.svg
+    - assets/icons/location.svg
+    - assets/icons/lock.svg
+    - assets/icons/logo.svg
+    - assets/icons/mirror.svg
+    - assets/icons/notification.svg
+    - assets/icons/number.svg
+    - assets/icons/open.svg
+    - assets/icons/person.svg
+    - assets/icons/power.svg
+    - assets/icons/right_arrow.svg
+    - assets/icons/setting.svg
+    - assets/icons/share.svg
+    - assets/icons/side mirror.svg
+    - assets/icons/snowflake.svg
+    - assets/icons/tailgate.svg
+    - assets/icons/warning.svg
+    - assets/icons/window.svg
+    - assets/icons/weather/cloud.svg
+    - assets/icons/weather/rainy.svg
+    - assets/icons/weather/rainy_snow.svg
+    - assets/icons/weather/snow.svg
+    - assets/icons/weather/sunny.svg
+    - assets/icons/weather/sunny_snow.svg
+    - assets/icons/weather/thunderstorm.svg
     - assets/images/car.webp
     - assets/images/car.png
     - assets/images/red car.png
     - assets/images/cloud1.png
+    - assets/images/cloud2.png
+    - assets/images/a8.png
+    - assets/images/q7.png
 
   #  - assets/icons/hub_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg
