@@ -1,7 +1,9 @@
 import 'package:drivemate/ui/splash_screen.dart';
+import 'package:drivemate/ui/view/home/home_view.dart';
 import 'package:drivemate/ui/view/start/insert_view.dart';
 import 'package:drivemate/ui/view/start/load_view.dart';
 import 'package:drivemate/ui/view/start/login_view.dart';
+import 'package:drivemate/ui/view/tab_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,6 +36,7 @@ class MyAppState extends State<MyApp> {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
+      // home: SplashScreen(),
       home: SplashScreen(),
     );
   }
